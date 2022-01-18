@@ -7,11 +7,7 @@ function init() {
 
 
 
-    const semaReg = Joi.object().keys({
-        name: Joi.string().trim().min(3).max(20).required(),
-        lastName: Joi.string().trim().min(3).max(20).required(),
-        jmbg: Joi.string().trim().min(13).max(13).required()
-    })
+  
 
 
 

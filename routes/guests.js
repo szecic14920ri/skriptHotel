@@ -1,6 +1,7 @@
 const express = require('express');
 const { sequelize, Users, Guests, Apartments, Reservations } = require('../models');
 const jwt = require('jsonwebtoken');
+const Joi = require('joi');
 require('dotenv').config();
 
 const route = express.Router();
@@ -28,6 +29,13 @@ route.use(authToken);
 
 
 
+const semaReg = Joi.object().keys({
+    name: Joi.string().trim().min(3).max(20).required(),
+    lastName: Joi.string().trim().min(3).max(20).required(),
+    jmbg: Joi.string().trim().min(13).max(13).required()
+});
+
+
 
 
 route.get('/', (req, res) => {
@@ -38,9 +46,16 @@ route.get('/', (req, res) => {
 
 
 route.post('/', (req, res) => { 
-        Guests.create({name: req.body.name, lastName: req.body.lastName, jmbg: req.body.jmbg})
+    Joi.validate(req.body, sema, (err, res) => {
+        if (err) {
+            res.status(400).send(err);
+        } else {
+            Guests.create({name: req.body.name, lastName: req.body.lastName, jmbg: req.body.jmbg})
             .then(row => res.json(row))
             .catch(err => res.status(500).json(err));
+        }
+    });
+        
 });
 
 

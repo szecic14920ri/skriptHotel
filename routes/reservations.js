@@ -35,7 +35,7 @@ const semaReg = Joi.object().keys({
     apartmentName: Joi.string().trim().min(3).max(20).required(),
     dateOfArrival: Joi.date().required(),
     dateOfDeparture: Joi.date().required()
-})
+});
 
 
 

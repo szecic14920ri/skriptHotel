@@ -6,6 +6,15 @@ function init() {
 
 
 
+    const semaReg = Joi.object().keys({
+        name: Joi.string().trim().min(3).max(20).required(),
+        password: Joi.string().trim().min(3).max(20).required(),
+        email: Joi.string().trim().email().required(),
+        admin: Joi.required()
+    })
+
+
+
 
     document.getElementById('register').addEventListener('click', e => {
 
