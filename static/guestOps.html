@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+    <script src="guestOps.js"></script>
+</head>
+
+<body>
+<div class="guestOps">
+    <h2>List all guests:</h2>
+    <button type="button" id="listGuests">List all</button>
+    <br>
+    <br><br>
+    <h2>Find guest by JMBG:</h2>
+    <input type="text" placeholder="Enter JMBG" name="searchByJMBG" size="20">  
+    <button type="submit" id="searchGuest">Search</button>   
+    <h3 id="guestFound"></h3>
+    <br><br>
+    <h2>Add new guest:</h2>
+    <form method="post" action="../admin/guests">  
+        <div class="container">   
+            <label>Name : </label>   
+            <input type="text" placeholder="Enter Name" name="guestName" id="guestName" required>  
+            <label>Last Name : </label>   
+            <input type="text" placeholder="Enter Last Name" name="guestLastName" id="guestLastName" required>  
+            <label>JMBG : </label>
+           <input type="text" placeholder="Enter JMBG" name="gustJMBG" id="guestJMBG" required>
+            <button type="submit" id="addGuest">Add Guest</button>
+        </div>   
+    </form>
+    <br><br>
+    <h2>Delete guest:</h2>
+    <input type="text" placeholder="Enter JMBG" name="deleteByJMBG" id="deleteByJMBG" size="20">
+    <button type="button" id="deleteGuest">Delete</button>
+    <h3 id="succesfullyDeleted"></h3>
+    <br><br>
+    <hr>
+    <ul id="guestList"></ul>
+
+</div>
+</body>

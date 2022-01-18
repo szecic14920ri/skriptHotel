@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+    <script src="apartmentOps.js"></script>
+</head>
+
+
+
+
+<body onload="init()"> 
+<div class="apartmentOps">
+    <h2>List all apartments:</h2>
+    <button type="button" id="listApartments">List all</button>
+    <br><br>
+    <h2>Add apartment:</h2>
+    <form method="post" action="/admin/apartments">  
+        <div class="container">   
+            <label>Name : </label>   
+            <input type="text" placeholder="Enter Name" name="apartmentName" required>  
+            <label>Number of rooms : </label>
+            <input type="number" placeholder="Enter Number of Rooms" name="apartmentNumberOfRooms" id="apartmentNumberOfRooms" required>
+            <label>Number of beds : </label>   
+            <input type="number" placeholder="Enter Number of Beds" name="apartmentNumberOfBeds" id="apartmentNumberOfBeds" required>  
+            <button type="submit" id="addApartment">Add Apartment</button>
+        </div>   
+    </form>
+    <br><br>
+    <hr>
+    <ul id="apartmentsList"></ul>
+</div>
+
+</body>

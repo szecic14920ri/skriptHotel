@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+
+
+
+<body onload="reservationOps.js">
+    
+<div class="reservationOps">
+    <h2>List all reservations</h2>
+    <button type="button" id="listReservations">List Reservations</button>
+    <br><br>
+    <h2>Add reservation</h2>
+    <form method="post" action="/admin/reservations">  
+        <div class="container">   
+            <label>Guest JMBG : </label>   
+            <input type="text" placeholder="Enter JMBG" name="reservationJMBG" id="reservationJMBG" required>  
+            <label>Apartment : </label>   
+            <input type="text" placeholder="Enter Apartment Name" name="reservationApartment" id="reservationApartment" required>  
+            <label>Date of arrival : </label>
+            <input type="date" placeholder="Enter Date of Arrival" name="reservationArrival" id="reservationArrival" required>
+            <label>Date of departure :</label>
+            <input type="date" placeholder="Enter Date of Departure" name="reservationDeparture" id="reservationDeparture" required>
+            <button type="submit" id="addReservation">Add Reservation</button>
+        </div>   
+    </form>
+    <br><br>
+    <hr>
+    <ul id="reservationsList"></ul>
+</div>
+</body>

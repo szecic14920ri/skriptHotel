@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+    <script src="registerAdmin.js"></script>
+</head>
+<body onload="init()">
+    <h2>first user registration</h2>
+    <form method="post" action="/registerAdmin">  
+        <div class="container">   
+            <label>Name : </label>   
+            <input type="text" placeholder="Enter Name" name="username" id="username" required>  
+            <label>Password : </label>   
+            <input type="password" placeholder="Enter Password" name="password" id="password" required>  
+            <label>Email : </label>
+            <input type="text" placeholder="Enter email" name="email" id="email" required>
+            <label>Admin :</label>
+            <input type="checkbox"  id="isAdmin">
+            <button type="submit" id="register">Register</button>
+        </div>   
+    </form>
+</body>
